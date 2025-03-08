@@ -1,5 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Notable&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  background-color: #000000;
+  color: #fff;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "Notable", sans-serif;
+}
 html {
   font-size: 14px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #0cc0df !important;
+  border-color: #0cc0df !important;
+}
+
+
+/***header css***/
+.custom-header nav img {
+  width: 200px;
+}
+.custom-header .navbar-nav {
+  column-gap: 30px;
+}
+.banner-text {
+  padding-top: 7rem;
+}
+.hero h2 {
+  font-size: 54px;
+}
+.banner-text p {
+  font-size: 22px;
+  width: 90%;
+  line-height: 40px;
+  letter-spacing: 2px;
 }
 
 @media (min-width: 768px) {
