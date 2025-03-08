@@ -1,28 +1,93 @@
-@{ ViewData["Title"] = "login"; }
+@{
+    ViewData["Title"] = "login";
+}
 
-<section id="login" class="login-section py-5  text-white">
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="row w-100">
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <div class="card p-4 card-login">
-                        <h2 class="text-white mb-5">LOGIN IN YOUR ACCOUNT</h2>
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label text-white">UserName</label>
-                                <input type="text" class="form-control" placeholder="Enter UserName">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label text-white">Password</label>
-                                <input type="password" class="form-control" placeholder="Enter Your Password">
-                            </div>
-                            <a href="#" class="text-white display-block">Forgot Your Password?</a>
-                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <img src="~/images/mobile-login.png" class="img-fluid" alt="Login Illustration">
+<section id="login" class="login-section py-5 text-white">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row w-100">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <div class="card p-4 card-login">
+                    <h2 class="text-white mb-5">LOGIN IN YOUR ACCOUNT</h2>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label text-white">UserName</label>
+                            <input type="text" id="username" class="form-control" placeholder="Enter UserName">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-white">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter Your Password">
+                        </div>
+                        <a href="#" class="text-white display-block">Forgot Your Password?</a>
+                        <button type="button" class="btn btn-primary mt-3" onclick="validateLogin()">Submit</button>
+                        <p id="errorMessage" class="text-danger mt-2"></p>
+                    </form>
                 </div>
             </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img src="~/images/mobile-login.png" class="img-fluid" alt="Login Illustration">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script>
+    const users = {
+        "patients": [
+            { username: "patient1", password: "pass123" },
+            { username: "patient2", password: "pass456" },
+            { username: "patient3", password: "pass789" }
+        ],
+        "doctors": [
+            { username: "doctor1", password: "docpass123" },
+            { username: "doctor2", password: "docpass456" },
+            { username: "doctor3", password: "docpass789" }
+        ]
+    };
+
+    function setSessionAndCookie(userType, username) {
+        sessionStorage.setItem("userType", userType);
+        sessionStorage.setItem("username", username);
+        document.cookie = `userType=${userType}; path=/`;
+        document.cookie = `username=${username}; path=/`;
+    }
+
+    function validateLogin() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let errorMessage = document.getElementById("errorMessage");
+
+        errorMessage.textContent = ""; // Clear previous error message
+
+        let isPatient = users.patients.some(user => user.username === username && user.password === password);
+        let isDoctor = users.doctors.some(user => user.username === username && user.password === password);
+
+        if (isPatient) {
+            setSessionAndCookie("patient", username);
+            window.location.replace("/Patient/Dashboard"); // Redirect to patient dashboard
+        } else if (isDoctor) {
+            setSessionAndCookie("doctor", username);
+            window.location.replace("/Doctor/Dashboard"); // Redirect to doctor dashboard
+        } else {
+            errorMessage.textContent = "Invalid username or password";
+        }
+    }
+
+    function checkSession() {
+        if (sessionStorage.getItem("userType")) {
+            let userType = sessionStorage.getItem("userType");
+            if (userType === "patient") {
+                window.location.replace("/Patient/Dashboard");
+            } else if (userType === "doctor") {
+                window.location.replace("/Doctor/Dashboard");
+            }
+        }
+    }
+
+    window.onload = checkSession;
+
+    // Prevent back navigation to login page after login
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function () {
+        window.location.replace("/");
+    };
+</script>

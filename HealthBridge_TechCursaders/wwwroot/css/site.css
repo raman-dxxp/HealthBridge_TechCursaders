@@ -49,12 +49,17 @@ html {
   border: 0;
   color: #fff;
 }
+.card.card-login form select {
+  height: 50px;
+  background: #333333;
+  border: 0;
+  color: #fff;
+}
 .card.card-login form label {
   font-size: 18px;
 }
 .card.card-login form a {
   display: block;
-  text-align: right;
 }
 .card.card-login .btn.btn-primary {
   padding: 12px 50px;
