@@ -16,6 +16,12 @@ html {
   background-color: #0cc0df !important;
   border-color: #0cc0df !important;
 }
+header.custom-header .btn-primary {
+  padding: 0 10px;
+}
+header.custom-header .btn-primary .nav-link {
+  color: rgb(255 255 255);
+}
 
 
 /***header css***/
@@ -66,6 +72,8 @@ html {
   height: 50px;
   border: 0;
 }
+
+
 
 @media (min-width: 768px) {
   html {

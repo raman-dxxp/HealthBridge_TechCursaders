@@ -18,5 +18,15 @@ namespace HealthBridge_TechCursaders.Controllers
             return View();
         }
 
+            public IActionResult Profile()
+        {
+            return View();
+        }
+            public IActionResult ControlShare()
+        {
+            return View();
+        }
+
+
     }
 }

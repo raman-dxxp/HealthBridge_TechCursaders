@@ -1,0 +1,53 @@
+@{ ViewData["Title"] = "Patient"; }
+
+
+<div class="container mt-4">
+    <h2 class="mb-4">Share Controls</h2>
+
+    <!-- Privacy Notice -->
+    <div class="share-card info">
+        <p><strong>Hi John,</strong> manage who has access to your health records</p>
+        <p class="text-muted">Your privacy matters. You control which healthcare providers can view your health information.</p>
+    </div>
+
+    <!-- Active Shares -->
+    <h4 class="mt-4 mb-4">Active Shares</h4>
+    <div class="share-card info d-flex align-items-center mb-4">
+        <div class="provider-badge me-3">TC</div>
+        <div>
+            <h5>Toronto General Hospital</h5>
+            <p class="mb-1">Dr. Sarah Chen • General Practitioner</p>
+            <small class="text-muted">Access provided: Mar 1, 2025 • Last accessed: Mar 2, 2025</small>
+        </div>
+        <div class="ms-auto">
+            <button class="btn btn-outline-primary">Manage Access</button>
+        </div>
+    </div>
+    <div class="share-card info mb-4 d-flex align-items-center">
+        <div class="provider-badge me-3">LL</div>
+        <div>
+            <h5>LifeLabs Medical Laboratory</h5>
+            <p class="mb-1">Laboratory Services • Toronto</p>
+            <small class="text-muted">Access provided: Mar 3, 2025 • Last accessed: Mar 5, 2025</small>
+        </div>
+        <div class="ms-auto">
+            <button class="btn btn-outline-primary">Manage Access</button>
+        </div>
+    </div>
+
+    <!-- Share Your Records -->
+    <h4 class="mt-4">Share Your Records</h4>
+    <div class="share-card info">
+        <label for="provider-info" class="form-label">Provider Information</label>
+        <div class="d-flex">
+            <input type="text" id="provider-info" class="form-control me-2" placeholder="Healthcare Provider Name or Email">
+            <button class="btn btn-outline-primary me-2">+ Add Provider</button>
+            <button class="btn btn-primary">Generate Share Link</button>
+        </div>
+        <small class="text-muted d-block mt-2">Or scan QR code to share during an appointment</small>
+    </div>
+
+   
+ 
+
+</div>

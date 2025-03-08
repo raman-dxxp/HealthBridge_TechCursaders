@@ -1,5 +1,78 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@{ ViewData["Title"] = "Patient"; }
+
+
+<div class="container mt-4 profile-page">
+    <h2 class="mb-4">My Profile</h2>
+
+    <!-- Profile Card -->
+    <div class="profile-card d-flex align-items-center p-4">
+        <div class="me-3">
+            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" 
+                 style="width: 80px; height: 80px; font-size: 24px;">
+                NN
+            </div>
+        </div>
+        <div>
+            <h4>Nanmi</h4>
+            <p class="mb-1"><strong>Health Card Number:</strong> OHIP 2345-678-9AB</p>
+            <p class="mb-1"><strong>Date of Birth:</strong> March 15, 1995</p>
+            <p class="mb-1"><strong>Email:</strong> nanmi@example.com</p>
+        </div>
+        <div class="ms-auto">
+            <button class="btn btn-outline-primary">Edit</button>
+            <span class="verified-badge ms-2">✔ Verified Account</span>
+        </div>
+    </div>
+
+    <!-- Personal Information -->
+    <h4 class="mt-4 mb-4">Personal Information</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="profile-card info">
+                <h5>Contact Information</h5>
+                <p><strong>Address:</strong> 123 Queen Street West, Toronto, ON M5V 2D3</p>
+                <p><strong>Phone:</strong> (416) 555-1234</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-card info" >
+                <h5>Emergency Contact</h5>
+                <p><strong>Name:</strong> Jane Doe</p>
+                <p><strong>Relationship:</strong> Spouse</p>
+                <p><strong>Phone:</strong> (416) 555-5678</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medical Information -->
+    <h4 class="mt-4">Medical Information</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="profile-card info">
+                <h5>Allergies</h5>
+                <span class="allergy-badge">Penicillin</span>
+                <span class="allergy-badge">Peanuts</span>
+                <span class="allergy-badge">Seasonal (Pollen)</span>
+                <hr>
+                <h5>Primary Care Provider</h5>
+                <p><strong>Dr. Sarah Chen</strong></p>
+                <p>Toronto General Hospital</p>
+                <p>(416) 555-9876</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="profile-card info">
+                <h5>Current Medications</h5>
+                <div class="medication-badge d-flex justify-content-between">
+                    <span>Cetirizine 10mg</span> <span>Daily</span>
+                </div>
+                <div class="medication-badge d-flex justify-content-between mt-2">
+                    <span>Vitamin D 1000 IU</span> <span>Daily</span>
+                </div>
+                <div class="medication-badge d-flex justify-content-between mt-2">
+                    <span>Multivitamin</span> <span>Daily</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
