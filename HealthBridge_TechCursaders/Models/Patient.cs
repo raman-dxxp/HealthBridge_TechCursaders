@@ -1,4 +1,5 @@
-﻿namespace HealthBridge_TechCursaders.Models
+﻿using System;
+namespace HealthBridge_TechCursaders.Models
 {
     public class Patient
     {

@@ -1,5 +1,7 @@
 ﻿using HealthBridge_TechCursaders.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HealthBridge_TechCursaders.Data.Repositories
 {
