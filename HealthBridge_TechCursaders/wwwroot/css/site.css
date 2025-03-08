@@ -1,6 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Notable&display=swap');
+
+body{
+  font-family: "Montserrat", sans-serif;
+  background-color: #000000;
+  color: #fff;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "Notable", sans-serif;
+}
 html {
   font-size: 14px;
 }
+.btn-primary {
+  color: #fff;
+  background-color: #0cc0df !important;
+  border-color: #0cc0df !important;
+}
+header.custom-header .btn-primary {
+  padding: 0 10px;
+}
+header.custom-header .btn-primary .nav-link {
+  color: rgb(255 255 255);
+}
+
+
+/***header css***/
+.custom-header nav img {
+  width: 200px;
+}
+.custom-header .navbar-nav {
+  column-gap: 30px;
+}
+.banner-text {
+  padding-top: 7rem;
+}
+.hero h2 {
+  font-size: 54px;
+}
+.banner-text p {
+  font-size: 22px;
+  width: 90%;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+
+/****login css***/
+.card.card-login {
+  background: transparent!important;
+  border: 0 !important;
+}
+.card.card-login form input {
+  height: 50px;
+  background: #333333;
+  border: 0;
+  color: #fff;
+}
+.card.card-login form select {
+  height: 50px;
+  background: #333333;
+  border: 0;
+  color: #fff;
+}
+.card.card-login form label {
+  font-size: 18px;
+}
+.card.card-login form a {
+  display: block;
+}
+.card.card-login .btn.btn-primary {
+  padding: 12px 50px;
+  height: 50px;
+  border: 0;
+}
+
+/**feature css**/
+/* Key Features Section */
+#key-features {
+  background: url('/images/bg-frame.png') no-repeat center center/cover;
+  padding: 60px 0;
+  position: relative;
+}
+
+.feature-title {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Layout */
+.feature-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Feature Box */
+.feature-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: #00AEEF;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.feature-image img {
+  width: 310px;
+  border-radius: 10px;
+  margin-bottom: -61px;
+}
+
+section#dashboard {
+  margin: 4rem 0 3rem;
+}
+
+
+/* Footer Styling */
+.footer {
+  background: #111;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 150px; /* Adjust the size of the logo */
+  margin-bottom: 10px;
+}
+
+/* Tagline */
+.footer-tagline {
+  color: #ffff;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 14px;
+}
+/* Navigation */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.footer-nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: white !important;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media */
+.footer-social {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-social a {
+  color: white;
+  margin: 0 10px;
+}
+
+.footer-social a:hover {
+  color: #00AEEF;
+}
+
+/* Copyright */
+.footer-copyright {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+
+
+
 
 @media (min-width: 768px) {
   html {

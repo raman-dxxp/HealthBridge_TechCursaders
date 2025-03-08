@@ -1,3 +1,5 @@
+#nullable enable
+
 namespace HealthBridge_TechCursaders.Models
 {
     public class ErrorViewModel

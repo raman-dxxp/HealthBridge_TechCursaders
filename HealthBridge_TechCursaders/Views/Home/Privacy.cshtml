@@ -1,6 +1,315 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "About Us";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .about-heading {
+        color: #0058b3;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+    
+    .mission-box {
+        background-color: black;
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .mission-box h3 {
+        color: #0069d9;
+        margin-bottom: 15px;
+    }
+    
+    .team-member {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .team-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 15px;
+        color: #0069d9;
+        font-size: 60px;
+        font-weight: 300;
+    }
+    
+    .timeline {
+        position: relative;
+        padding: 20px 0;
+    }
+    
+    .timeline:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        background: white;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    
+    .timeline-content {
+        width: 45%;
+        padding: 20px;
+        background: black;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgb(255,255,255);
+    }
+    
+    .timeline-content h4 {
+        color: #0069d9; 
+        margin-bottom: 10px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+        float: left;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        float: right;
+    }
+    
+    .timeline-item:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    
+    .timeline-dot {
+        width: 20px;
+        height: 20px;
+        background: #0069d9;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translateX(-50%);
+    }
+    
+    .values-box {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .value-item {
+        background-color: black;
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 5px rgb(255,255,255);
+        height: 100%;
+    }
+    
+    .value-item h4 {
+        color: #0069d9;
+        margin-bottom: 15px;
+    }
+    
+    .value-icon {
+        font-size: 40px;
+        color: #0069d9;
+        margin-bottom: 15px;
+    }
+</style>
+
+<!-- About Us Hero Section -->
+<section class="about-section">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="about-heading">About HealthBridge</h1>
+            <p class="lead mb-5">Empowering Canadians to take control of their healthcare journey.</p>
+        </div>
+    </div>
+    
+    <!-- Mission & Vision -->
+    <div class="mission-box">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Our Mission</h3>
+                <p>To transform how Canadians access and manage their health information by creating a secure, unified platform that bridges the gap between fragmented healthcare systems.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Our Vision</h3>
+                <p>A connected Canadian healthcare system where every patient has complete ownership of their health information, enabling better care coordination, informed decision-making, and improved health outcomes.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Our Story -->
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h2 class="about-heading">Our Story</h2>
+            <p>HealthBridge was born from a simple yet challenging experience that many Canadians face: the frustration of managing fragmented health records across multiple healthcare providers.</p>
+            <p>In 2023, our founding team experienced firsthand the difficulties of coordinating care between specialists, primary care physicians, and testing facilities. Medical history had to be repeated at each new appointment, test results were often unavailable when needed, and critical information fell through the cracks.</p>
+            <p>Recognizing that this was a systemic issue affecting millions of Canadians, we set out to create a solution that would put patients at the center of their healthcare journey, giving them ownership of their complete medical information while facilitating secure sharing with healthcare providers.</p>
+        </div>
+    </div>
+    
+    <!-- Our Journey Timeline -->
+    <h2 class="about-heading">Our Journey</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>2023</h4>
+                <p>HealthBridge concept developed in response to personal experiences with fragmented healthcare records.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>January 2024</h4>
+                <p>Initial prototype developed to address record integration and patient control challenges.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>March 2024</h4>
+                <p>Partnered with key healthcare stakeholders to ensure platform alignment with Canadian healthcare standards.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>June 2024</h4>
+                <p>Beta launch of HealthBridge with initial focus on Ontario healthcare system integration.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h4>January 2025</h4>
+                <p>Official launch of HealthBridge across Canada with comprehensive integration capabilities.</p>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both; margin-bottom: 60px;"></div>
+    
+    <!-- Our Values -->
+    <h2 class="about-heading">Our Values</h2>
+    <div class="values-box">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="value-item">
+                    <div class="value-icon">🔒</div>
+                    <h4>Privacy First</h4>
+                    <p>We believe your health information belongs to you. Our platform is built with privacy and security as foundational principles, not afterthoughts.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="value-item">
+                    <div class="value-icon">🔄</div>
+                    <h4>Seamless Integration</h4>
+                    <p>We're committed to breaking down silos in healthcare by creating interoperable systems that connect disparate sources of health information.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="value-item">
+                    <div class="value-icon">👥</div>
+                    <h4>Patient Empowerment</h4>
+                    <p>We design every feature with the goal of giving patients more control, better understanding, and greater agency in their healthcare decisions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="value-item">
+                    <div class="value-icon">🔍</div>
+                    <h4>Transparency</h4>
+                    <p>We believe in clear communication about how data is used, shared, and protected across our platform.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="value-item">
+                    <div class="value-icon">📱</div>
+                    <h4>Accessibility</h4>
+                    <p>We're dedicated to making healthcare information accessible to all Canadians, regardless of location, language, or technical ability.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="value-item">
+                    <div class="value-icon">🔬</div>
+                    <h4>Innovation</h4>
+                    <p>We continuously explore new technologies and approaches to improve how Canadians interact with their health information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Team Section -->
+    <h2 class="about-heading">Meet Our Team</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="team-member">
+                <div class="team-photo">JR</div>
+                <h4>Ramandeep</h4>
+                <p>Founder & CEO</p>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="team-member">
+                <div class="team-photo">SP</div>
+                <h4>Amandeep</h4>
+                <p>Chief Technology Officer</p>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="team-member">
+                <div class="team-photo">ML</div>
+                <h4>Nanmi Zimik</h4>
+                <p>Chief Medical Officer</p>
+            </div>
+        </div>
+        
+        <div class="col-md-3">
+            <div class="team-member">
+                <div class="team-photo">AN</div>
+                <h4>Yipeng Huang</h4>
+                <p>Chief Privacy Officer</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Partners & Compliance -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h2 class="about-heading">Our Partners</h2>
+            <p>HealthBridge works closely with healthcare providers, provincial health ministries, and privacy commissioners across Canada to ensure our platform meets the highest standards of integration, compliance, and security.</p>
+            <p>Our solution aligns with the Connected Care for Canadians Act and supports the national vision for digital health interoperability.</p>
+        </div>
+        
+        <div class="col-md-6">
+            <h2 class="about-heading">Privacy & Compliance</h2>
+            <p>HealthBridge adheres to all relevant Canadian privacy legislation including PIPEDA and provincial health information privacy acts. Our platform implements end-to-end encryption, detailed access logging, and granular permission controls.</p>
+            <p>We undergo regular security audits and maintain certifications that demonstrate our commitment to protecting your sensitive health information.</p>
+        </div>
+    </div>
+</section>

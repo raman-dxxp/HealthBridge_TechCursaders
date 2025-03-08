@@ -1,6 +1,7 @@
 ﻿using HealthBridge_TechCursaders.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace HealthBridge_TechCursaders.Controllers
 {
@@ -19,6 +20,20 @@ namespace HealthBridge_TechCursaders.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
+        public IActionResult ContactUs()
         {
             return View();
         }

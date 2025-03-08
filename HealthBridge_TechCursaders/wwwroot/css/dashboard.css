@@ -1,0 +1,71 @@
+.dashboard-banner img {
+    width: 60%;
+    max-width: 100%;
+}
+.dashboard-banner {
+    text-align: center;
+}
+.banner-text {
+    padding-top: 2rem;
+}
+.dashboard-section .searchhere.w-25 input {
+    background-color: #000;
+}
+.dashboard-section .searchhere.w-25 input {
+    background-color: #4f4f4f;
+    border: 0;
+    height: 50px;
+    padding: 20px;
+    color:#fff;
+}
+.dashboard-section .searchhere.w-25 input::placeholder {
+    color: #8f8f8f;
+}
+.card.card-summary {
+    border-left: 10px solid;
+}
+.card.card-summary p a {
+    color: #0cc0df !important;
+}
+.diagnosis {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+span.badge.badge1.bg-primary {
+    background-color: #0cc0df4a !important;
+    color: #000;
+    padding: 5px 20px;
+}
+section#dashboard .nav-tabs .nav-link {
+    color: #fff;
+}
+section#dashboard .nav-tabs .nav-link.active {
+    color: #2e2424;
+}
+
+
+.profile-page .profile-card {
+    background: #2d2d2d;
+}
+.profile-card.info {
+    padding: 25px;
+    min-height: 200px;
+}
+span.verified-badge.ms-2 {
+    color: #94ff94;
+}
+.share-card.info {
+    padding: 25px 50px;
+    background: #222222;
+}
+.share-card.info .btn-outline-primary {
+    color: #0cc0df;
+    border-color: #0cc0df;
+}
+
+.share-card.info .btn-outline-primary:hover {
+    color: #ffffff;
+    border-color: #0cc0df;
+    background-color: #0cc0df;
+}

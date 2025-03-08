@@ -3,47 +3,128 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HealthBridge_TechCursaders</title>
+    <title>@ViewData["Title"] - HealthBridge</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HealthBridge_TechCursaders.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HealthBridge_TechCursaders</a>
+    <header class="custom-header">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="img-fluid" src="~/images/health1.png" alt="Health Bridge" asp-append-version="true">
+                </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        @if (Context.Request.Path == "/Patient/Dashboard")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Patient" asp-action="Dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Patient" asp-action="ControlShare">Share Control</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Patient" asp-action="Profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">How It Works</a>
+                            </li>
+                            <li class="nav-item btn-primary">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="signup">SignUp</a>
+                            </li>
+                        }
+
+                        @if (Context.Request.Path == "/Patient/Dashboard")
+                        {
+                            <li class="nav-item btn-primary">
+                                <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item btn-primary">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="login">Login</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- Main content area where page content will be rendered -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - HealthBridge_TechCursaders - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    
+
+    <!-- Footer Section -->
+<footer class="footer text-muted position-relative">
+    <div class="container text-center">
+        <!-- Logo -->
+        <div class="footer-logo">
+            <img src="~/images/health1.png" alt="HealthBridge Logo">
         </div>
-    </footer>
+        
+        <!-- Tagline -->
+        <h2 class="footer-tagline">GET THE BIG PICTURE OF YOUR HEALTH.<br> START HEALTH BRIDGE TODAY.</h2>
+        
+        <!-- Navigation Links -->
+        <ul class="footer-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">How it Works</a></li>
+            <li><a href="#">Login/SignUp</a></li>
+        </ul>
+
+        <!-- Copyright -->
+        <p class="footer-copyright">All Rights Reserved By <i>HEALTH BRIDGE</i>.</p>
+    </div>
+</footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = "/Home/Login";
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
