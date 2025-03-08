@@ -75,22 +75,76 @@ This project directly aligns with the Connected Care for Canadians Act (introduc
 
 ## Project Structure
 
-```
-HealthBridge.sln
+HEALTHBRIDGE_TECHCRUSADERS/
 │
-├── src/
-│   ├── HealthBridge.Web/                      # MVC Web Application
-│   ├── HealthBridge.API/                      # API for React Frontend
-│   ├── HealthBridge.Core/                     # Domain Models & Business Logic
-│   └── HealthBridge.Infrastructure/           # Data Access & External Services
+├── Controllers/
+│   ├── HomeController.cs              # Landing page controller
+│   ├── PatientController.cs           # Patient profile and dashboard
+│   ├── HealthRecordController.cs      # Health record management
+│   ├── AccountController.cs           # Authentication and user management
+│   └── ErrorController.cs             # Error handling
 │
-├── tests/                                     # Unit & Integration Tests
-│   └── HealthBridge.Tests/
+├── Models/
+│   ├── HealthRecord.cs                # Health record entity
+│   ├── Patient.cs                     # Patient profile entity
+│   ├── Provider.cs                    # Healthcare provider entity
+│   ├── User.cs                        # User authentication entity
+│   └── ErrorViewModel.cs              # Error display model
 │
-└── client/                                    # React Frontend
-    ├── public/
-    └── src/
-```
+├── Data/
+│   ├── HealthBridgeDbContext.cs       # Entity Framework DbContext
+│   ├── Repositories/
+│   │   ├── PatientRepository.cs       # Patient data access
+│   │   ├── HealthRecordRepository.cs  # Health record data access
+│   │   ├── ProviderRepository.cs      # Provider data access
+│   │   └── IRepository.cs             # Repository interface
+│   ├── SeedData.cs                    # Database seed data
+│   └── Migrations/                    # EF Core migrations
+│
+├── Services/
+│   ├── AuthService.cs                 # Authentication logic
+│   ├── PatientService.cs              # Patient business logic
+│   ├── TimelineService.cs             # Timeline generation logic
+│   └── Interfaces/
+│       ├── IAuthService.cs
+│       ├── IPatientService.cs
+│       └── ITimelineService.cs
+│
+├── Views/
+│   ├── Home/
+│   │   ├── Index.cshtml               # Landing page
+│   │   └── Privacy.cshtml             # Privacy policy
+│   │
+│   ├── Patient/
+│   │   ├── Dashboard.cshtml           # Patient dashboard
+│   │   └── Profile.cshtml             # Edit profile
+│   │
+│   ├── Shared/
+│   │   ├── _Layout.cshtml             # Main layout
+│   │   ├── _ValidationScriptsPartial.cshtml
+│   │   └── Error.cshtml               # Error page
+│   │
+│   ├── _ViewStart.cshtml
+│   └── _ViewImports.cshtml
+│
+├── wwwroot/
+│   ├── css/
+│   │   ├── site.css
+│   │   └── _Layout.cshtml.css
+│   │
+│   ├── js/
+│   │   ├── site.js                    # Common JavaScript
+│   │   └── timeline.js                # Timeline visualization
+│   │
+│   ├── lib/                           # Third-party libraries
+│   └── images/
+│
+├── Properties/
+│   └── launchSettings.json            # Development server settings
+│
+├── Program.cs                         # Application entry point
+├── appsettings.json                   # Application configuration
+└── appsettings.Development.json       # Development configuration
 
 ## Setup Instructions
 
