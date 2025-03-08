@@ -40,8 +40,8 @@ html {
 
 /****login css***/
 .card.card-login {
-  background: transparent;
-  border: 0;
+  background: transparent!important;
+  border: 0 !important;
 }
 .card.card-login form input {
   height: 50px;

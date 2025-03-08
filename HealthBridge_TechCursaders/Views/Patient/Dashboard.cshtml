@@ -1,24 +1,185 @@
 ﻿@{ ViewData["Title"] = "Home"; }
 
-<!-----hero banner--->
+<!-----hero banner
 <section class="hero text-left py-3">
     <div class="container"#>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="banner-text">
                     <h2>Welcome to the Dashboard, Nanmi!</h2>
-                <p class="lead">An advanced health management system that provides 
-                    seamless interaction between patients and healthcare providers.</p>
+                <p class="lead">Your health records are up to date. Stay informed and in control of your healthcare journey.</p>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="banner-image">
-                    <img class="img-fluid" src="images/banner-image.png" alt="banner image"/>
+            <div class="col-lg-6 col-md-6 col-12 py-2">
+                <div class="dashboard-banner">
+                    <img class="img-fluid" src="~/images/dashboard.png" alt="banner image"/>
                 </div>
             </div>
         </div>
     </div>
         
 </section>
-<!-----hero banner--->
+-hero banner--->
+
+
+<section id="dashboard" class="dashboard-section py-5">
+        <div class="container">
+            <h2 class="mb-4">Health Timeline</h2>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <ul class="nav nav-tabs" id="healthTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="true">All</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="healthtimeline-tab" data-bs-toggle="tab" data-bs-target="#healthtimeline" type="button" role="tab" aria-controls="healthtimeline" aria-selected="false">Health Timeline</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="healthsummary-tab" data-bs-toggle="tab" data-bs-target="#healthsummary" type="button" role="tab" aria-controls="healthsummary" aria-selected="false">health Summary</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="searchhere w-25">
+                    <input type="text" class="form-control" placeholder="Search your health records...">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="card p-3 text-center bg-success text-white">
+                        <h5>Consultations</h5>
+                        <p>8 in last 12 months</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center bg-warning text-white">
+                        <h5>Lab Tests</h5>
+                        <p>12 in last 12 months</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center bg-purple text-dark">
+                        <h5>Prescriptions</h5>
+                        <p>4 Active medications</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card p-3 text-center bg-danger text-white">
+                        <h5>Urgent</h5>
+                        <p>1 Follow up needed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="tab-content" id="healthTabsContent">
+                    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <!---card--->
+                                <div class="card card-summary p-3 border-left border-success text-dark">
+                                    <small class="text-muted">Mar 2, 2025</small>
+                                    <h5 class="mt-2">Annual Physical Examination</h5>
+                                    <p class="mb-1">
+                                        <strong><a href="#" class="">Dr. Sarah Chen</a></strong> - General Practitioner
+                                    </p>
+                                    <p class="text-muted">Toronto General Hospital</p>
+                                    <div class="diagnosis">
+                                        <p>BP: 120/80, Heart rate: 72bpm
+                                            <br>
+                                            Temperature: 37°C
+                                        </p>
+                                 
+                                    <span class="badge  badge1 bg-primary">Shared</span>
+                                    </div>
+                                    
+                                </div>
+                                <!---card--->
+                            </div>
+                            <div class="col-md-6">
+                                <!---card--->
+                                <div class="card card-summary p-3 border-left border-success text-dark">
+                                    <small class="text-muted">Mar 2, 2025</small>
+                                    <h5 class="mt-2">Annual Physical Examination</h5>
+                                    <p class="mb-1">
+                                        <strong><a href="#" class="">Dr. Sarah Chen</a></strong> - General Practitioner
+                                    </p>
+                                    <p class="text-muted">Toronto General Hospital</p>
+                                    <div class="diagnosis">
+                                        <p>BP: 120/80, Heart rate: 72bpm
+                                            <br>
+                                            Temperature: 37°C
+                                        </p>
+                                 
+                                    <span class="badge  badge1 bg-primary">Shared</span>
+                                    </div>
+                                    
+                                </div>
+                                <!---card--->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="healthtimeline" role="tabpanel" aria-labelledby="healthtimeline-tab">
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <!---card--->
+                                <div class="card card-summary p-3 border-left border-success text-dark">
+                                    <small class="text-muted">Mar 2, 2025</small>
+                                    <h5 class="mt-2">Annual Physical Examination</h5>
+                                    <p class="mb-1">
+                                        <strong><a href="#" class="">Dr. Sarah Chen</a></strong> - General Practitioner
+                                    </p>
+                                    <p class="text-muted">Toronto General Hospital</p>
+                                    <div class="diagnosis">
+                                        <p>BP: 120/80, Heart rate: 72bpm
+                                            <br>
+                                            Temperature: 37°C
+                                        </p>
+                                 
+                                    <span class="badge  badge1 bg-primary">Shared</span>
+                                    </div>
+                                    
+                                </div>
+                                <!---card--->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="healthsummary" role="tabpanel" aria-labelledby="healthsummary-tab">
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <!---card--->
+                                <div class="card card-summary p-3 border-left border-success text-dark">
+                                    <small class="text-muted">Mar 2, 2025</small>
+                                    <h5 class="mt-2">Annual Physical Examination</h5>
+                                    <p class="mb-1">
+                                        <strong><a href="#" class="">Dr. Sarah Chen</a></strong> - General Practitioner
+                                    </p>
+                                    <p class="text-muted">Toronto General Hospital</p>
+                                    <div class="diagnosis">
+                                        <p>BP: 120/80, Heart rate: 72bpm
+                                            <br>
+                                            Temperature: 37°C
+                                        </p>
+                                 
+                                    <span class="badge  badge1 bg-primary">Shared</span>
+                                    </div>
+                                    
+                                </div>
+                                <!---card--->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 d-flex justify-content-between">
+                <div>
+                    <span class="badge bg-success">Consultation</span>
+                    <span class="badge bg-warning">Test/Lab Result</span>
+                    <span class="badge bg-info">Specialist Visit</span>
+                    <span class="badge bg-primary">Prescription</span>
+                    <span class="badge bg-danger">Hospital Stay</span>
+                    <span class="badge bg-light text-dark">Procedure</span>
+                </div>
+                <button class="btn btn-primary">Export</button>
+            </div>
+        </div>
+    </section>
