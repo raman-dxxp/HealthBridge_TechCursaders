@@ -6,17 +6,13 @@ namespace HealthBridge_TechCursaders.Controllers
 {
     public class PatientController : Controller
     {
-        private readonly PatientRepository _repository;
+        
 
-        public PatientController(PatientRepository repository)
+
+            public IActionResult Dashboard()
         {
-            _repository = repository;
+            return View();
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var patients = await _repository.GetAllPatientsAsync();
-            return View(patients);
-        }
     }
 }
