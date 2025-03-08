@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]  HealthBridge</title>
+    <title>@ViewData["Title"] - HealthBridge</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="custom-header">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img class="img-fluid" src="~/images/health1.png" alt="Health Bridge" asp-append-version="true">
@@ -21,34 +21,66 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">How It works</a>
-                        </li>
+                        @if (Context.Request.Path == "/Patient/Dashboard")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Patient" asp-action="Dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Patient" asp-action="ControlShare">Share Control</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Patient" asp-action="Profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                            </li>
 
-                        <li class="nav-item btn-primary">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="login">Login</a>
-                        </li>
-                        <li class="nav-item btn-primary">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="signup">SignUp</a>
-                        </li>
-                        
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">How It Works</a>
+                            </li>
+                            <li class="nav-item btn-primary">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="signup">SignUp</a>
+                            </li>
+                        }
+
+                        @if (Context.Request.Path == "/Patient/Dashboard")
+                        {
+                            <li class="nav-item btn-primary">
+                                <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item btn-primary">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="login">Login</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- Main content area where page content will be rendered -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -81,9 +113,18 @@
         <p class="footer-copyright">All Rights Reserved By <i>HEALTH BRIDGE</i>.</p>
     </div>
 </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = "/Home/Login";
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
