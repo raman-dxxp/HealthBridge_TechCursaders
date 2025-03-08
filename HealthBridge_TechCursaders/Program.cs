@@ -1,22 +1,20 @@
-using Microsoft.EntityFrameworkCore;
-using HealthBridge_TechCursaders.Data;
+﻿using Microsoft.Extensions.DependencyInjection;
+using HealthBridge_TechCursaders.Data.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllersWithViews();
-
-// Database Connection
-builder.Services.AddDbContext<HealthBridgeDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 var app = builder.Build();
-app.UseStaticFiles();
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        SeedData.Initialize(services);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"[ERROR] Seed data failed: {ex.Message}");
+    }
+}
 
 app.Run();
